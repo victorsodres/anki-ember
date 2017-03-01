@@ -18,12 +18,12 @@
       <span class="card-title p-l-10">Se não, cadastre-se por aqui:</span>
       <div class="card-content">
 
+        {{input id="name" placeholder="Nome" class="validate" value=user.fullName}}
         {{input id="email" placeholder="Email"  class="validate" value=user.email}}
-        {{input id="name" placeholder="Nome" class="validate" value=user.name}}
         {{input id="new-password" placeholder="Senha" class="validate" value=user.password type="password"}}
         {{input id="repeat-password" placeholder="Repita a senha" class="validate" value=user.repassword type="password"}}
 
-        <button class="btn waves-effect waves-light highlight-color " type="button">Cadastrar</button>
+        <button {{action 'createUser'}} class="btn waves-effect waves-light highlight-color " type="button">Cadastrar</button>
 
       </div>
     </div>

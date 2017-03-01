@@ -10,9 +10,18 @@ export default Ember.Route.extend({
 
   actions: {
     authenticate(){
-      // returns sessionToken and user data
       let auth = this.controller.getProperties('username', 'password');
-      this.get('authManager').authenticate(auth).then(() => window.location.reload());
+      this.loginUser(auth);
+    },
+    createUser(){
+      let user = this.controller.get('user');
+      this.store.createRecord('user', user).save()
+      .then(() => this.loginUser({ "username": user.email, "password":  user.password}));
     }
+  },
+
+  loginUser(auth) {
+    this.get('authManager').authenticate(auth).then(() => window.location.reload());
   }
+
 });
