@@ -1,0 +1,55 @@
+
+
+<div class="row m-t-2">
+  <h5 class="center">{{this.model.title}}</h5>
+</div>
+
+{{#collapsible-list}}
+  <li>
+    <div id="new-deck-collapsible" class="collapsible-header"><i class="material-icons">add</i>Novo Card</div>
+    <div class="collapsible-body">
+
+      <div class="row m-l-20 m-t-15">
+        <form class="col s12">
+          <div class="row">
+
+            <div class="input-field col s3">
+              {{input id="card-front" class="validate" type="text" value=front}}
+              <label for="card-front">Frente *</label>
+            </div>
+            <div class="input-field col s3">
+              {{input id="card-back" class="validate" type="text" value=back}}
+              <label for="card-back">Atrás *</label>
+            </div>
+            <div class="input-field col s4">
+              {{input id="card-description" type="text" class="validate" value=description}}
+              <label for="card-description">Descrição</label>
+            </div>
+            <a class="m-t-15 btn-floating waves-effect waves-light second-color"
+              {{action 'criarCard'}}>
+              <i class="material-icons">add</i>
+            </a>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </li>
+{{/collapsible-list}}
+
+<div class="row m-t-2">
+  {{#each this.model.cards as |card|}}
+    {{card-reveal front=card.front back=card.back}}
+  {{else}}
+    Você não possui nenhum card cadastrado, clique no painel acima para criar um novo :)
+  {{/each}}
+</div>
+
+<div class="row m-t-2">
+  {{button-materialize icon="keyboard_arrow_left" label="Voltar" link="decks"}}
+</div>
+
+{{#fixed-floating-button color="highlight-color" icon="create"}}
+  {{floating-button color="red" icon="add" tooltip-text="Novo Card"}}
+  {{floating-button color="green" icon="import_contacts" tooltip-text="Estudar este Deck"}}
+{{/fixed-floating-button}}

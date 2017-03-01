@@ -1,0 +1,13 @@
+{{#if link}}
+  {{#link-to link}}
+    <a class="waves-effect waves-light btn {{if color color 'second-color'}}">
+      {{#if icon}}<i class="material-icons left">{{icon}}</i>{{/if}}
+      {{label}}
+    </a>
+  {{/link-to}}
+{{else}}
+  <a class="waves-effect waves-light btn {{if color color 'second-color'}}">
+    {{#if icon}}<i class="material-icons left">{{icon}}</i>{{/if}}
+    {{label}}
+  </a>
+{{/if}}

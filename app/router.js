@@ -6,6 +6,14 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('decks', function(){
+    this.route('deck', { path: ':deckTitle' });
+  });
+  this.route('study', function(){
+    this.route('deck', { path: ':deckTitle' });
+  });
+  this.route('search');
+  this.route('login');
 });
 
 export default Router;

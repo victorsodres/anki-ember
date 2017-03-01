@@ -1,0 +1,11 @@
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large {{color}} {{if tooltip-text 'tooltipped'}}"
+    data-tooltip="{{if tooltip-text tooltip-text}}" data-position="left">
+    <i class="large material-icons">{{icon}}</i>
+  </a>
+  <ul>
+    <!-- BOTÃO DE EXEMPLO
+    <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li> -->
+    {{yield}}
+  </ul>
+</div>

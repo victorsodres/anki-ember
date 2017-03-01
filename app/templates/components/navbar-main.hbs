@@ -1,0 +1,32 @@
+<ul id="navbar-menu-content" class="dropdown-content">
+  <li><a href="#!">Perfil</a></li>
+  <li class="divider"></li>
+  <li><a {{action 'logout'}} href="#!">Sair</a></li>
+</ul>
+
+<nav>
+  <div class="nav-wrapper primary-color">
+    {{link-to 'Ankify' 'index' class="brand-logo center"}}
+
+
+    <ul class="right hide-on-med-and-down">
+      {{#if logged}}
+      <li>
+        <a class="dropdown-button" href="#!" data-activates="navbar-menu-content">
+          <i class="material-icons left">account_circle</i>
+          {{logged.user}}
+          <i class="material-icons right">arrow_drop_down</i>
+        </a>
+      </li>
+      {{else}}
+      <li>
+        {{#link-to 'login' class="m-r-10"}}
+          <i class="material-icons left">perm_identity</i>
+          <span>Login</span>
+        {{/link-to}}
+      </li>
+      {{/if}}
+    </ul>
+
+  </div>
+</nav>

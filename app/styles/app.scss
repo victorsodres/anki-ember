@@ -1,0 +1,54 @@
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
+
+// Materialize styles
+@import "materialize";
+@import "./shortcuts";
+
+$background-color: #fafafa;
+$primary-color: #2196F3;
+$second-color: #1976D2;
+$third-color: #1565C0;
+$highlight-color: #1565C0;
+$dark-grey: #757575;
+$light-grey: #9e9e9e;
+
+h1, h2, h3, h4, h5 {
+  color: $dark-grey;
+}
+
+body {
+  background-color: $background-color;
+}
+
+.brand-logo {
+  font-family: cursive;
+  font-weight: bold;
+}
+
+// #anki-breadcrumb {
+//   margin-top: 0.5rem;
+//   box-shadow: none;
+//   background-color: $background-color;
+// }
+//
+// .breadcrumb {
+//   color: $dark-grey;
+//   &:before { color: $dark-grey; }
+//   &:last-child { color: $light-grey; }
+// }
+
+.primary-color { background-color: $primary-color!important}
+.second-color { background-color: $second-color!important}
+.third-color { background-color: $third-color!important}
+.highlight-color { background-color: $highlight-color!important}
+// .background-color { background-color: #fafafa!important }
+
+.card-menu-anki {
+  min-height: 250px;
+  padding-top: 6%;
+}
+.card-reveal-anki {
+  min-height: 200px;
+  padding: 10%!important;
+}

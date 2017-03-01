@@ -1,0 +1,18 @@
+<div class="col s12 m4">
+  <div class="card hoverable center card-menu-anki">
+    <div class="card-image">
+      <i class="large material-icons blue-text">{{icon}}</i>
+    </div>
+    <div class="card-content">
+      <span class="card-title">{{title}}</span>
+      <p class="grey-text"><i>{{yield}}</i></p>
+    </div>
+
+    {{#if show-actions}}
+    <div class="card-action grey lighten-2 grey-text text-darken-4">
+      {{button-materialize label="Remover" color="red darken-4"}}
+      {{button-materialize label="Editar"}}
+    </div>
+    {{/if}}
+  </div>
+</div>

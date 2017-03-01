@@ -1,0 +1,32 @@
+{{outlet}}
+
+<div class="row">
+
+  <div class="col s6 m-t-20">
+    <div class="card p-t-10">
+      <span class="card-title p-l-10">Se já possui cadastro, efetue seu login:</span>
+      <div class="card-content">
+      {{input id="username" placeholder="Usuário/Email" class="validate" value=username}}
+      {{input id="password" placeholder="Senha" class="validate" value=password type="password"}}
+      <button {{action 'authenticate'}} class="btn waves-effect waves-light" type="button">Entrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s6 m-t-20">
+    <div class="card p-t-10">
+      <span class="card-title p-l-10">Se não, cadastre-se por aqui:</span>
+      <div class="card-content">
+
+        {{input id="email" placeholder="Email"  class="validate" value=user.email}}
+        {{input id="name" placeholder="Nome" class="validate" value=user.name}}
+        {{input id="new-password" placeholder="Senha" class="validate" value=user.password type="password"}}
+        {{input id="repeat-password" placeholder="Repita a senha" class="validate" value=user.repassword type="password"}}
+
+        <button class="btn waves-effect waves-light highlight-color " type="button">Cadastrar</button>
+
+      </div>
+    </div>
+  </div>
+
+</div>

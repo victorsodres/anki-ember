@@ -1,0 +1,48 @@
+
+<div class="row">
+
+  {{#collapsible-list}}
+    <li>
+      <div id="new-deck-collapsible" class="collapsible-header"><i class="material-icons">add</i>Novo Deck</div>
+      <div class="collapsible-body">
+
+        <div class="row m-l-20 m-t-15">
+          <form class="col s12">
+            <div class="row">
+
+              <div class="input-field col s4">
+                {{input id="deck-title" class="validate" type="text" value=title}}
+                <label for="deck-title">Título *</label>
+              </div>
+              <div class="input-field col s4">
+                {{input id="deck-description" type="text" class="validate" value=description}}
+                <label for="deck-description">Descrição</label>
+              </div>
+              <a {{action 'criarDeck'}}
+              class="m-t-15 btn-floating waves-effect waves-light second-color">
+                <i class="material-icons">add</i>
+              </a>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </li>
+  {{/collapsible-list}}
+
+  <div class="row">
+    {{#each model as |deck|}}
+      {{#link-to "decks.deck" deck.urlTitle}}
+        {{#card-menu title=deck.title icon="receipt" show-actions=true}}
+          {{if deck.description deck.description 'Sem Descrição.'}}
+        {{/card-menu}}
+      {{/link-to}}
+    {{else}}
+      Você não possui nenhum deck cadastrado, clique no painel acima para criar um novo :)
+    {{/each}}
+  </div>
+</div>
+
+<div class="row m-t-2">
+  {{button-materialize icon="keyboard_arrow_left" label="Voltar" link="application"}}
+</div>
