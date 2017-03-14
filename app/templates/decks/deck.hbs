@@ -39,7 +39,17 @@
 
 <div class="row m-t-2">
   {{#each this.model.cards as |card|}}
-    {{card-reveal front=card.front back=card.back}}
+    {{#card-reveal card=card}}
+      <p>
+        DIAS BTWEEN: {{card.daysBetweenReviews}}
+      </p>
+      <p>
+        DIFICULDADE: {{card.difficulty}}
+      </p>
+      <p>
+        DATA LAST REVIEW: {{card.dateLastReviewed}}
+      </p>
+    {{/card-reveal}}
   {{else}}
     Você não possui nenhum card cadastrado, clique no painel acima para criar um novo :)
   {{/each}}
@@ -47,9 +57,7 @@
 
 <div class="row m-t-2">
   {{button-materialize icon="keyboard_arrow_left" label="Voltar" link="decks"}}
+  <a {{action 'studyThisDeck'}} class="waves-effect waves-light btn second-color">Teste</a>
 </div>
 
-{{#fixed-floating-button color="highlight-color" icon="create"}}
-  {{floating-button color="red" icon="add" tooltip-text="Novo Card"}}
-  {{floating-button color="green" icon="import_contacts" tooltip-text="Estudar este Deck"}}
-{{/fixed-floating-button}}
+{{fixed-floating-button action="studyThisDeck" color="highlight-color" icon="import_contacts" tooltip-text="Estudar este Deck"}}
